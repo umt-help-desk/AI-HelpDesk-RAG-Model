@@ -77,7 +77,7 @@ The **AI HelpDesk** is an intelligent assistant designed to help university stud
 
 ### 1️⃣ Clone the Repository
 ```bash
-git clone https://github.com/Kaleemullah-Younas/AI-HelpDesk-RAG-Model.git
+git clone https://github.com/umt-help-desk/AI-HelpDesk-RAG-Model.git
 cd AI-HelpDesk-RAG-Model
 ```
 
