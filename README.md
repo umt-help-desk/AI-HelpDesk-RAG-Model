@@ -87,6 +87,7 @@ pip install -r requirements.txt
 ```
 
 ### 3️⃣ Download LLMs (Pre-Trained Models)
+➡️ Open CMD in the project directory and then download these models. Make sure you have at least 20GB of free space available on the disk
 ```bash
 git clone https://huggingface.co/facebook/bart-large-cnn
 
@@ -154,7 +155,7 @@ This project is licensed under the **MIT License**. See the full license details
 
 ---
 
-## 📬 Contributors Contact
+## 📬 Contributors Contact 👨‍💻
 👤 **Muhammad Rehan Hanif**  
 📧 Email: [rehan.hanif2004@gmail.com](mailto:rehan.hanif2004@gmail.com)  
 📂 GitHub: [MRH-66](https://github.com/MRH-66)
