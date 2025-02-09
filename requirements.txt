@@ -11,3 +11,5 @@ langchain-huggingface
 transformers
 torch
 sentencepiece
+playwright
+beautifulsoup4
