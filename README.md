@@ -1,178 +1,188 @@
-# AI Help Desk Chatbot
+# AI Help Desk
 
-## Overview
+## 📌 Overview
 
-The **AI Help Desk Chatbot** is an intelligent assistant designed to help university students with their queries regarding university policies, student guidelines, and general academic-related inquiries. It uses web scraping, document embedding, and large language models (LLMs) to provide precise answers.
+The **AI Help Desk** is an intelligent assistant designed to help university students with their academic inquiries, including university policies, student guidelines, and general academic-related questions. The chatbot integrates **web scraping, document embeddings, and Large Language Models (LLMs)** to provide precise and contextually relevant answers.
 
-## How It Works 🚀
+---
 
-### 1. Data Collection
-- Scrapes university web pages using **Playwright** and **BeautifulSoup**.
-- Extracts text data and stores it in structured files.
+## 🧩 Features
 
-### 2. Document Processing & Embeddings
-- Loads university guidelines, student handbooks, and scraped web data.
-- Splits text into smaller chunks and creates vector embeddings using **sentence-transformers/all-mpnet-base-v2**.
+- ✅ **Web Scraping**: Dynamically extracts data from university websites using **Playwright** & **BeautifulSoup**.
+- ✅ **AI-Powered Answering**: Uses **BART-Large-CNN** for summarization & **LaMini-GPT-1.5B** for response generation.
+- ✅ **Efficient Retrieval**: Stores embeddings in **ChromaDB** for fast and accurate search.
+- ✅ **Scalable & Fast**: Supports large datasets and multiple queries efficiently.
+- ✅ **User-Friendly UI**: Built with **Streamlit** for an intuitive chatbot interface.
+
+---
+
+## 🛠️ Tech Stack
+
+- **Python** (Primary Language)
+- **Playwright & BeautifulSoup** (Web Scraping)
+- **LangChain** (Retrieval & Document Processing)
+- **Hugging Face Transformers** (LLMs for Answering)
+- **ChromaDB** (Vector Database)
+- **Streamlit** (Frontend UI for Chatbot)
+
+---
+
+## ⚙️ How It Works
+
+### 1️⃣ Data Collection
+- Scrapes university web pages using **Playwright** & **BeautifulSoup**.
+- Extracts text and stores it in structured files.
+
+### 2️⃣ Document Processing & Embeddings
+- Loads university handbooks, student guidelines, and scraped data.
+- Splits text into smaller chunks & creates vector embeddings using **sentence-transformers/all-mpnet-base-v2**.
 - Stores embeddings in **ChromaDB** for efficient retrieval.
 
-### 3. Query Processing
-- User asks a question via **Streamlit-based UI**.
-- Retrieves the most relevant context using semantic search on **ChromaDB**.
-- Summarizes the retrieved context using **BART-Large-CNN**.
+### 3️⃣ Query Processing
+- User asks a question via **Streamlit UI**.
+- Retrieves the most relevant context using **semantic search** on **ChromaDB**.
+- Summarizes retrieved content with **BART-Large-CNN**.
 - Generates a final answer using **LaMini-GPT-1.5B**.
 
-## Features ✨
+---
 
-- ✅ **Web Scraping**: Extracts information from university websites dynamically.
-- ✅ **AI-Powered Answering**: Uses two LLMs—BART for summarization & LaMini-GPT for response generation.
-- ✅ **ChromaDB for Retrieval**: Efficiently searches for relevant content using embeddings.
-- ✅ **Fast & Scalable**: Supports multiple queries and document sources.
-- ✅ **User-Friendly Interface**: Built with **Streamlit** for easy interaction.
+## 📂 Folder Structure
 
-## Why Two LLMs? 🤖🤝
-
-We use two specialized models instead of one for optimal performance:
-- **BART-Large-CNN**: A state-of-the-art text summarization model that refines long, retrieved context into concise summaries.
-- **LaMini-GPT-1.5B**: A text-generation model fine-tuned for answering academic queries in a coherent and contextually accurate way.
-
-Using one model for both tasks would lead to less accurate and longer responses. The two-step approach ensures better context understanding and precise answers.
-
-## Tech Stack 🛠️
-
-- **Python** (Primary language)
-- **Playwright** (Web Scraping)
-- **BeautifulSoup** (HTML Parsing)
-- **LangChain** (Document Processing & Retrieval)
-- **Hugging Face Transformers** (LLMs)
-- **ChromaDB** (Vector Database for retrieval)
-- **Streamlit** (Frontend for chatbot UI)
-
-## Installation Guide 🛠️
-
-1️⃣ **Clone the repository**  
-```bash
-git clone https://github.com/MRH-66/AskUni-AI.git
-cd AskUni-AI
+```
+📦 AI-Help-Desk-Chatbot  
+ ┣ 📂 bart-large-cnn  # Pre-trained Summarization Model
+ ┣ 📂 LaMini-GPT-1.5B  # Pre-trained LLM for Response Generation
+ ┣ 📂 chroma_db  # Vector Database Storage
+ ┣ 📂 Data  # Scraped Data and Documents
+ ┃ ┣ 📜 DataSet.pdf
+ ┃ ┣ 📜 Participant-Guide.pdf
+ ┃ ┗ 📜 Handbook-Undergraduate-Studies.pdf
+ ┣ 📂 Notebooks  # Jupyter Notebooks for Preprocessing
+ ┃ ┣ 📜 clean_scraping_data.ipynb
+ ┃ ┣ 📜 data_preprocessing.ipynb
+ ┃ ┗ 📜 csv_to_pdf.ipynb
+ ┣ 📜 scrapping.py  # Web Scraper
+ ┣ 📜 embeddings.py  # Embedding Generator
+ ┣ 📜 utils.py  # Context Retrieval & Summarization
+ ┣ 📜 main.py  # Streamlit UI for Chatbot
+ ┣ 📜 design.py  # UI Design
+ ┣ 📜 requirements.txt  # Dependencies
+ ┣ 📜 LICENSE  # Project License
+ ┗ 📜 README.md  # Documentation
 ```
 
-2️⃣ **Installation Requirements**
+---
+
+## 🛠️ Installation & Setup
+
+### 1️⃣ Clone the Repository
+```bash
+git clone https://github.com/Kaleemullah-Younas/AI-HelpDesk-RAG-Model.git
+cd AI-HelpDesk-RAG-Model
+```
+
+### 2️⃣ Install Dependencies
 ```bash
 pip install -r requirements.txt
 ```
 
-3️⃣ **Download the LLMs (Hugging Face Checkpoints)**
-
-➡️Open CMD in the project directory and then download these models. Make sure you have at least 20GB of free space available on the disk
+### 3️⃣ Download LLMs (Pre-Trained Models)
 ```bash
 git clone https://huggingface.co/facebook/bart-large-cnn
+
 git clone https://huggingface.co/MBZUAI/LaMini-GPT-1.5B
 ```
-⚠️ Ensure both folders (`bart-large-cnn` and `LaMini-GPT-1.5B`) are in the project directory.
+⚠️ Ensure both `bart-large-cnn` and `LaMini-GPT-1.5B` folders are in the project directory.
 
-4️⃣ **Run the Web Scraper (Optional)**
+### 4️⃣ Run Web Scraper (Optional)
 ```bash
 python scrapping.py
 ```
 
-5️⃣ **Generate Embeddings & Store in ChromaDB**
+### 5️⃣ Generate Embeddings & Store in ChromaDB
 ```bash
 python embeddings.py
 ```
 
-6️⃣ **Start the AI Chatbot**
+### 6️⃣ Start the Chatbot
 ```bash
 streamlit run main.py
 ```
 
-## Folder Structure 📂
-```
-📦 ai-help-desk-chatbot  
- ┣ 📂 bart-large-cnn  # Downloaded LLM  
- ┣ 📂 LaMini-GPT-1.5B  # Downloaded LLM  
- ┣ 📂 chroma_db  # Vector database storage  
- ┣ 📂 Data  # Scraped data and documents
- ┃ ┣ 📜 DataSet.pdf
- ┃ ┣ 📜 Participant-Guide.pdf
- ┃ ┗ 📜 Hand book Undergraduate Studies.pdf
- ┣ 📂 NoteBooks  # Jupyter Notebooks for preprocessing and conversions  
- ┃ ┣ 📜 clean_scraping_data.ipynb  # Cleans and converts scraped text into a structured PDF  
- ┃ ┣ 📜 Data_Preprocessing.ipynb  # Processes Excel student data  
- ┃ ┗ 📜 CSV-to-PDF.ipynb  # Converts CSV files into formatted PDFs  
- ┣ 📜 scrapping.py  # Web scraper  
- ┣ 📜 embeddings.py  # Embedding generation  
- ┣ 📜 utils.py  # Context retrieval, summarization, answering  
- ┣ 📜 main.py  # Streamlit UI for chatbot
- ┗ 📜 design.py  # UI Design
- ┣ 📜 requirements.txt  # Dependencies  
- ┗ 📜 README.md  # Project Documentation
-```
+---
 
-## Jupyter Notebooks (Data Preprocessing & Conversion) 📝
+## 🔍 Troubleshooting
 
-### 1️⃣ clean_scraping_data.ipynb
-**Purpose:** Cleans raw scraped data and converts it into a structured PDF format.
-
-**How to Use:**
-- Place your raw scraped text inside `data/raw_scraped_data.txt`.
-- Run the notebook to generate `Clean_Scrape_data.pdf`.
-- Use the cleaned PDF for embedding generation.
-
-### 2️⃣ Data_Preprocessing.ipynb
-**Purpose:** Processes Excel/CSV file containing student data.
-
-**How to Use:**
-- Place your Excel file in the `data/` folder.
-- Run `Data_Preprocessing.ipynb` to clean and structure the data.
-
-### 3️⃣ CSV-to-PDF.ipynb
-**Purpose:** Converts structured CSV data into a formatted PDF report.
-
-**How to Use:**
-- Ensure your CSV file is in the `data/` folder.
-- Run `CSV-to-PDF.ipynb` to generate the formatted PDF.
-
-## Troubleshooting 🔧
-
-### ➡️Issue: `ModuleNotFoundError: No module named 'playwright'`
-**Fix:**
+### 🔹 Module Not Found: `ModuleNotFoundError: No module named 'playwright'`
 ```bash
 pip install playwright
 playwright install
 ```
 
-### ➡️Issue: Device ran out of memory (OOM Error)
-**Fix:**
+### 🔹 Out of Memory (OOM) Error
 - Reduce `chunk_size` in `embeddings.py`.
 - Use `device='cpu'` in models if running on a low-GPU machine.
 
-### ➡️Issue: No response from chatbot
-**Fix:**
+### 🔹 No Response from Chatbot
 - Ensure both LLMs are downloaded and placed in the project directory.
 - Run `python embeddings.py` again before starting `main.py`.
 
-### ➡️Issue: Missing dependencies and Python version mismatch
-**Fix:**
-- Before installing the dependencies, create a Conda environment and activate it.
+### 🔹 Missing Dependencies / Python Version Mismatch
 ```bash
 conda create -n ai-help-desk python=3.10.12
 conda activate ai-help-desk
-```
-- After activating the environment, install the required dependencies.
-```bash
 pip install -r requirements.txt
 ```
 
-## Future Improvements 🚀
-- Add support for more university departments (expandable knowledge base).
-- Improve multi-turn conversations for better user experience.
-- Implement fine-tuned retrieval models for better accuracy in responses.
-- Add support for voice-based queries for hands-free interaction.
+---
 
-## Contributors 👨‍💻
+## 🤝 Contributing
 
-**Muhammad Rehan Hanif**
+We welcome contributions! If you'd like to improve the chatbot, follow these steps:
 
-📧 Contact: rehan.hanif2004@gmail.com
+1. **Fork** the repository.
+2. **Create a new branch**: `git checkout -b feature-branch`
+3. **Commit your changes**: `git commit -m 'Added new feature'`
+4. **Push to the branch**: `git push origin feature-branch`
+5. **Create a Pull Request**
 
-## Ready to Try?
-Start the chatbot and explore AI-powered university assistance! 🎓🤖
+---
+
+## 📜 License
+
+This project is licensed under the **MIT License**. See the full license details in the [LICENSE](LICENSE) file.
+
+---
+
+## 📬 Contact
+👤 **Muhammad Rehan Hanif**  
+📧 Email: [rehan.hanif2004@gmail.com](mailto:rehan.hanif2004@gmail.com)  
+📂 GitHub: [MRH-66](https://github.com/MRH-66)
+
+👤 **Syed Burhan Ahmad**  
+📧 Email: [syedburhanahmedd@gmail.com](mailto:syedburhanahmedd@gmail.com)  
+📂 GitHub: [SyedBurhanAhmed](https://github.com/SyedBurhanAhmed)
+
+👤 **Kaleemullah Younas**  
+📧 Email: [kaleemullahyouus123@gmail.com](mailto:kaleemullahyouus123@gmail.com)  
+📂 GitHub: [Kaleemullah-Younas](https://github.com/Kaleemullah-Younas)
+
+👤 **Syed Arman Mehdi Kazmi**  
+📧 Email: [kazmiarmanmehdi@gmail.com](mailto:kazmiarmanmehdi@gmail.com)  
+📂 GitHub: [ArmanMehdi](https://github.com/ArmanMehdi)
+
+👤 **Ali Hassan**  
+📧 LinkedIN: [Ali Hassan](https://www.linkedin.com/in/ali-hassan-96b230244/)  
+📂 GitHub: [logsaviour](https://github.com/logsaviour)
+
+---
+
+## 🌟 Acknowledgments
+
+- [Hugging Face](https://huggingface.co/) - Pre-trained LLMs
+- [LangChain](https://python.langchain.com/) - Efficient Context Retrieval
+- [Streamlit](https://streamlit.io/) - UI for Chatbot
+- [ChromaDB](https://www.trychroma.com/) - Vector Database
+- [BeautifulSoup](https://www.crummy.com/software/BeautifulSoup/) - Web Scraping
+
+### 🎓 AI-Powered University Assistance
