@@ -46,6 +46,44 @@ The **AI HelpDesk** is an intelligent assistant designed to help university stud
 
 ---
 
+## Why Two LLMs? 🤖🤝
+
+
+We use two specialized models instead of one for optimal performance:
+- **BART-Large-CNN**: A state-of-the-art text summarization model that refines long, retrieved context into concise summaries.
+- **LaMini-GPT-1.5B**: A text-generation model fine-tuned for answering academic queries in a coherent and contextually accurate way.
+
+Using one model for both tasks would lead to less accurate and longer responses. The two-step approach ensures better context understanding and precise answers.
+
+---
+
+## Jupyter Notebooks (Data Preprocessing & Conversion) 📝
+
+
+### 1️⃣ clean_scraping_data.ipynb
+**Purpose:** Cleans raw scraped data and converts it into a structured PDF format.
+
+**How to Use:**
+- Place your raw scraped text inside `data/raw_scraped_data.txt`.
+- Run the notebook to generate `Clean_Scrape_data.pdf`.
+- Use the cleaned PDF for embedding generation.
+
+### 2️⃣ Data_Preprocessing.ipynb
+**Purpose:** Processes Excel/CSV file containing student data.
+
+**How to Use:**
+- Place your Excel file in the `data/` folder.
+- Run `Data_Preprocessing.ipynb` to clean and structure the data.
+
+### 3️⃣ CSV-to-PDF.ipynb
+**Purpose:** Converts structured CSV data into a formatted PDF report.
+
+**How to Use:**
+- Ensure your CSV file is in the `data/` folder.
+- Run `CSV-to-PDF.ipynb` to generate the formatted PDF.
+
+---
+
 ## 📂 Folder Structure
 
 ```
