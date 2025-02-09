@@ -1,8 +1,8 @@
-# AI Help Desk
+# AI HelpDesk
 
 ## 📌 Overview
 
-The **AI Help Desk** is an intelligent assistant designed to help university students with their academic inquiries, including university policies, student guidelines, and general academic-related questions. The chatbot integrates **web scraping, document embeddings, and Large Language Models (LLMs)** to provide precise and contextually relevant answers.
+The **AI HelpDesk** is an intelligent assistant designed to help university students with their academic inquiries, including university policies, student guidelines, and general academic-related questions. The chatbot integrates **web scraping, document embeddings, and Large Language Models (LLMs)** to provide precise and contextually relevant answers.
 
 ---
 
@@ -49,7 +49,7 @@ The **AI Help Desk** is an intelligent assistant designed to help university stu
 ## 📂 Folder Structure
 
 ```
-📦 AI-Help-Desk-Chatbot  
+📦 AI-Help-Desk 
  ┣ 📂 bart-large-cnn  # Pre-trained Summarization Model
  ┣ 📂 LaMini-GPT-1.5B  # Pre-trained LLM for Response Generation
  ┣ 📂 chroma_db  # Vector Database Storage
