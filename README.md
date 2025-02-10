@@ -29,7 +29,7 @@ The **AI HelpDesk** is an intelligent assistant designed to help university stud
 
 ## ➰ RAG Pipleline
 
-![Alt text](RAGpipeline.jpg)
+![Alt text](RAGpipeline.png)
 
 ---
 
