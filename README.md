@@ -27,6 +27,10 @@ The **AI HelpDesk** is an intelligent assistant designed to help university stud
 
 ---
 
+![Alt text](RAGpipeline.jpg)
+
+---
+
 ## ⚙️ How It Works
 
 ### 1️⃣ Data Collection
